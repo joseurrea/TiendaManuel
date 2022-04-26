@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,27 +14,15 @@ use App\Http\Controllers\ProductoController;
 |
 */
 
-// Ruta por defecto, si no entra en otra
-Route::fallback(function (){
-    return "<h1> Esta ruta no existe </h1>";
-});
-
 Route::get('/', function () {
-    return view('home');
-});
+    return view('tienda');
+})->name("principal");
+Route::resource("productos", ProductoController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::view("productos","productos");
+Route::resource("productos", \App\Http\Controllers\ProductoController::class);
 
-Route::view("familia","familia");
-
-Route::view("home","home");
-
-Route::resource("tiendas", \App\Http\Controllers\TiendaController::class );
-
-Route::resource("productos", ProductoController::class );
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

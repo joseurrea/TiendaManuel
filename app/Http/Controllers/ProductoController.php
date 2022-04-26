@@ -15,9 +15,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
-        $productos =Producto::paginate(5);
-        return view("productos", ['productos'=>$productos]);
+        $productos = Producto::paginate(10);
+        return view("tienda.producto.listado", ['productos' => $productos]);
     }
 
     /**
@@ -28,31 +27,23 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        return view("productos_create");
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProductoRequest  $request
+     * @param \App\Http\Requests\StoreProductoRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreProductoRequest $request)
     {
-
-        // recojo el contenido del formulario del .create
-        $producto = new Producto($request->input());
-        // guardar el nuevo producto
-        $producto->SaveOrFail();
-        // mostrar
-        $productos =Producto::paginate(5);
-        return view("productos",["productos"=>$productos]);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param \App\Models\Producto $producto
      * @return \Illuminate\Http\Response
      */
     public function show(Producto $producto)
@@ -63,47 +54,34 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param \App\Models\Producto $producto
      * @return \Illuminate\Http\Response
      */
     public function edit(Producto $producto)
     {
         //
-        return view("productos_update",["producto"=>$producto]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProductoRequest  $request
-     * @param  \App\Models\Producto  $producto
+     * @param \App\Http\Requests\UpdateProductoRequest $request
+     * @param \App\Models\Producto $producto
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateProductoRequest $request, Producto $producto)
     {
-        // request son los nuevos datos del producto y $producto los antiguos
-
-        // modificar el producto
-        $producto->update($request->input());
-
-        // mostrar productos (con el modificado)
-        $productos =Producto::paginate(6);
-        return view("productos",["productos"=>$productos]);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param \App\Models\Producto $producto
      * @return \Illuminate\Http\Response
      */
     public function destroy(Producto $producto)
     {
-        // borrar el producto
-        $producto->delete();
-        // mostrar clientes (con el modificado)
-        $productos=Producto::paginate(6);
-        return view("productos",["productos"=>$productos]);
-
+        //
     }
 }

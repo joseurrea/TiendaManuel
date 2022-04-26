@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Tienda extends Model
 {
     use HasFactory;
-    protected $table="tienda";
-    protected $primaryKey="cod";
-    public $timestamps="false";
-    public $incrementing="false";
+
+    protected $table = "tienda";
+    protected $keyType = "string";
+    protected $primaryKey = "cod";
+    public $incrementing = false;
+    public $timestamps = false;
 }

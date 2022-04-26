@@ -15,8 +15,6 @@ class TiendaController extends Controller
      */
     public function index()
     {
-        $tiendas =Tienda::all();
-        return view("tiendas", ['tiendas'=>$tiendas]);
         //
     }
 

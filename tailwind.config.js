@@ -12,18 +12,12 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
-            height: {
-                "5v" : "5vh",
-                "10v" : "10vh",
-                "15v" : "15vh",
-                "70v" : "70vh",
-
-            },
-            margin: {
-                "mlp25" : "margin-left: 25%",
-                "mrp25" : "margin-right: 25%",
-
-            },
+            height:{
+                "15v": "15vh",
+                "5v": "5vh",
+                "70v": "70vh",
+                "10v": "10vh",
+            }
         },
     },
 

@@ -2,27 +2,26 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-header
-{
-    @apply h-15v flex flex-row  bg-neutral-900 p-5 text-white justify-between justify-content-between
+header {
+    @apply h-15v flex flex-row mx-10 p-6 bg-red-200 justify-between;
 }
 
-nav
-{
-    @apply h-5v shadow-md p-6 bg-neutral-800 relative flex items-center w-full justify-center text-white
-
+.titulo {
+    @apply text-5xl
 }
 
-main
-{
-    @apply h-70v bg-gradient-to-bl from-green-800 to-amber-300 text-white z-0
+.menu {
+    @apply text-3xl
 }
 
-section
-{
-    @apply h-70v grid grid-cols-3 gap-3 z-0
+nav {
+    @apply h-5v flex flex-row mx-10 p-2 bg-red-400 justify-between;
 }
-footer
-{
-    @apply h-10v flex flex-row  bg-neutral-800 p-4 text-white items-center justify-center
+
+main {
+    @apply h-70v flex flex-col mx-10 p-2 bg-red-50 overflow-auto;
+}
+
+footer {
+    @apply h-10v flex flex-col mx-10 p-2 bg-red-800 text-white;
 }
